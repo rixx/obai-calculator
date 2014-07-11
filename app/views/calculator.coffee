@@ -8,6 +8,7 @@ module.exports = class CalculatorView extends View
 	events:
 		'keyup .ingredient': 'changedIngredient'
 		'keyup .mass': 'changedMass'
+		'keyup .tubes': 'changedTubes'
 		'submit form': 'denySubmit'
 
 	changedInput: -> console.log 'WONK'
@@ -25,11 +26,10 @@ module.exports = class CalculatorView extends View
 		console.log $(event.target).data('ingredient')
 
 	changedMass: (event) ->
-		console.log event
-		console.log $(event.target).val()
-		result = obai.getByMass Number($('.mass').val()), recipe
-		console.log result
-		@renderCalculation result
+		@renderCalculation obai.getByMass Number($('.mass').val()), recipe
+
+	changedTubes: (event) ->
+		@renderCalculation obai.getByMass Number($('.tubes').val())*4, recipe
 
 	renderCalculation: (cal) ->
 		@$('.sugar').val cal.sugar
@@ -38,3 +38,5 @@ module.exports = class CalculatorView extends View
 		@$('.sodiumbicarbonate').val cal.sodiumbicarbonate
 		@$('.aroma').val cal.aroma
 		@$('.caffeine').val cal.caffeine
+		@$('.mass').val cal.mass
+		@$('.tubes').val cal.mass/4
