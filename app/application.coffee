@@ -1,2 +1,7 @@
-# The application object.
-module.exports = class Application extends Chaplin.Application
+CalculatorView = require 'views/calculator'
+
+module.exports = class Application
+	constructor: ->
+		view = new CalculatorView()
+		view.render()
+		$('body').append view.$el

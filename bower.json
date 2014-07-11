@@ -18,7 +18,9 @@
     "backbone": "~1.1.2",
     "bootstrap": "~3.2.0",
     "jquery": "~2.1.1",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "chaplin": "~1.0.1",
+    "moment": "~2.7.0"
   },
   "overrides": {
     "backbone": {

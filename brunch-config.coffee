@@ -6,9 +6,9 @@ exports.config =
 				'js/app.js': /^app(\/|\\)(?!vendor)/
 				'js/vendor.js': /^(?!app)/
 		stylesheets:
-			joinTo: 'app.css'
+			joinTo: 'css/app.css'
 		templates:
-			joinTo: 'app.js'
+			joinTo: 'js/app.js'
 	plugins:
 		static_jade:
 			extension: ".static.jade"

@@ -1,4 +1,4 @@
-recipes = require('./recipe.coffee')
+recipes = require 'lib/recipe'
 DEFAULT_RECIPE = recipes.obai3
 
 module.exports.getByMass = (mass, recipe) ->

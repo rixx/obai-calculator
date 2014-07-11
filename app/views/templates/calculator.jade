@@ -1,0 +1,43 @@
+.container
+	h1 obai calculator
+	table.table
+		tr
+			td Sugar
+			td= recipe.sugar
+			td
+				input.ingredient.sugar.form-control(type='text' data-ingredient='sugar')
+		tr
+			td Guarana
+			td= recipe.guarana
+			td
+				input.ingredient.guarana.form-control(type='text')
+		tr
+			td Citric Acid
+			td= recipe.citricAcid
+			td
+				input.citric-acid.form-control(type='text')
+		tr
+			td Sodiumbicarbonate
+			td= recipe.sodiumbicarbonate
+			td
+				input.sodiumbicarbonate.form-control(type='text')
+		tr
+			td Aroma
+			td= recipe.aroma
+			td
+				input.aroma.form-control(type='text')
+		tr
+			td Caffeine
+			td= recipe.caffeine
+			td
+				input.caffeine.form-control(type='text')
+		tr
+			td Total
+			td 100%
+			td
+				input.mass.form-control(type='text')
+		tr
+			td Tubes
+			td
+			td
+				input.form-control(type='text')
