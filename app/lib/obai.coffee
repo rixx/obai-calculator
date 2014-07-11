@@ -4,8 +4,7 @@ DEFAULT_RECIPE = recipes.obai3
 module.exports.getByMass = (mass, recipe) ->
 	mass ?= 100
 	recipe ?= DEFAULT_RECIPE
-
-	result = {}
+	result = {mass: mass}
 
 	for ingredient,amount of recipe
 		result[ingredient] = (amount/100) * mass
@@ -14,9 +13,9 @@ module.exports.getByMass = (mass, recipe) ->
 
 
 module.exports.getByIngredient = (ingredient, recipe) ->
-	ingredient ?=
-		citricAcid: 50
+	ingredient ?= {citricAcid: 50}
 	recipe ?= DEFAULT_RECIPE
+
 	{name, amount} for name, amount of ingredient
 	mass = (amount * 100) / recipe[name]
 
