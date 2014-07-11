@@ -32,11 +32,18 @@ module.exports = class CalculatorView extends View
 		@renderCalculation obai.getByMass Number($('.tubes').val())*4, recipe
 
 	renderCalculation: (cal) ->
-		@$('.sugar').val cal.sugar
-		@$('.guarana').val cal.guarana
-		@$('.citric-acid').val cal.citricAcid
-		@$('.sodiumbicarbonate').val cal.sodiumbicarbonate
-		@$('.aroma').val cal.aroma
-		@$('.caffeine').val cal.caffeine
-		@$('.mass').val cal.mass
-		@$('.tubes').val cal.mass/4
+		# table
+		@$('table .sugar').val cal.sugar
+		@$('table .guarana').val cal.guarana
+		@$('table .citric-acid').val cal.citricAcid
+		@$('table .sodiumbicarbonate').val cal.sodiumbicarbonate
+		@$('table .aroma').val cal.aroma
+		@$('table .caffeine').val cal.caffeine
+		@$('table .mass').val cal.mass
+		@$('table .tubes').val cal.mass/4
+
+		# viz
+
+		caffeineHeight = 95-cal.caffeine/cal.mass*100
+		console.log caffeineHeight
+		@$('svg .caffeine').attr 'd', "M 1 #{caffeineHeight} L 1 94 A 5 5 1 0 0 14 94 L 14 #{caffeineHeight}"
