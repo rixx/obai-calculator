@@ -23,7 +23,11 @@ module.exports = class CalculatorView extends View
 
 
 	changedIngredient: (event) ->
-		console.log $(event.target).data('ingredient')
+		$el = $ event.target
+		arg = {}
+		arg[$el.data('ingredient')] = Number($el.val())
+		console.log arg
+		@renderCalculation obai.getByIngredient arg, recipe
 
 	changedMass: (event) ->
 		@renderCalculation obai.getByMass Number($('.mass').val()), recipe
@@ -45,5 +49,4 @@ module.exports = class CalculatorView extends View
 		# viz
 
 		caffeineHeight = 95-cal.caffeine/cal.mass*100
-		console.log caffeineHeight
 		@$('svg .caffeine').attr 'd', "M 1 #{caffeineHeight} L 1 94 A 5 5 1 0 0 14 94 L 14 #{caffeineHeight}"
