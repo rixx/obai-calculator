@@ -1,10 +1,5 @@
-DEFAULT_RECIPE = 
-	sugar: 81.84
-	guarana: 6.19
-	citricAcid: 5.29
-	sodiumbicarbonate: 2.59
-	aroma: 2.5
-	caffeine: 1.6
+recipes = require('./recipe.coffee')
+DEFAULT_RECIPE = recipes.obai3
 
 module.exports.getByMass = (mass, recipe) ->
 	mass ?= 100
