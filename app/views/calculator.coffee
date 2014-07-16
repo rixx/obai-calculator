@@ -46,9 +46,9 @@ module.exports = class CalculatorView extends View
 	renderCalculation: (cal, origin) ->
 		# table
 		for ingredient, cssClass of ingredients
-			@$('table .' + cssClass).val cal[ingredient] unless origin is ingredient
-		@$('table .mass').val cal.mass unless origin is 'mass'
-		@$('table .tubes').val cal.mass/4 unless origin is  'tubes'
+			@$('table .' + cssClass).val cal[ingredient].toFixed 3 unless origin is ingredient
+		@$('table .mass').val cal.mass.toFixed 3 unless origin is 'mass'
+		@$('table .tubes').val (cal.mass/4).toFixed 2 unless origin is  'tubes'
 
 		# viz
 
