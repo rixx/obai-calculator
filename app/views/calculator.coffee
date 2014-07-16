@@ -2,6 +2,14 @@ View = require 'views/base/view'
 obai = require 'lib/obai'
 recipe = require('lib/recipe').obai3
 
+ingredients =
+	sugar: 'sugar'
+	guarana: 'guarana'
+	citricAcid: 'citric-acid'
+	sodiumbicarbonate: 'sodiumbicarbonate'
+	aroma: 'aroma'
+	caffeine: 'caffeine'
+
 module.exports = class CalculatorView extends View
 	template: require 'views/templates/calculator'
 
@@ -25,28 +33,24 @@ module.exports = class CalculatorView extends View
 	changedIngredient: (event) ->
 		$el = $ event.target
 		arg = {}
-		arg[$el.data('ingredient')] = Number($el.val())
-		console.log arg
-		@renderCalculation obai.getByIngredient arg, recipe
+		ingredient = $el.data('ingredient')
+		arg[ingredient] = Number($el.val())
+		@renderCalculation(obai.getByIngredient(arg, recipe), ingredient)
 
 	changedMass: (event) ->
-		@renderCalculation obai.getByMass Number($('.mass').val()), recipe
+		@renderCalculation(obai.getByMass(Number($('.mass').val()), recipe), 'mass')
 
 	changedTubes: (event) ->
-		@renderCalculation obai.getByMass Number($('.tubes').val())*4, recipe
+		@renderCalculation(obai.getByMass(Number($('.tubes').val())*4, recipe), 'tubes')
 
-	renderCalculation: (cal) ->
+	renderCalculation: (cal, origin) ->
 		# table
-		@$('table .sugar').val cal.sugar
-		@$('table .guarana').val cal.guarana
-		@$('table .citric-acid').val cal.citricAcid
-		@$('table .sodiumbicarbonate').val cal.sodiumbicarbonate
-		@$('table .aroma').val cal.aroma
-		@$('table .caffeine').val cal.caffeine
-		@$('table .mass').val cal.mass
-		@$('table .tubes').val cal.mass/4
+		for ingredient, cssClass of ingredients
+			@$('table .' + cssClass).val cal[ingredient] unless origin is ingredient
+		@$('table .mass').val cal.mass unless origin is 'mass'
+		@$('table .tubes').val cal.mass/4 unless origin is  'tubes'
 
 		# viz
 
-		caffeineHeight = 95-cal.caffeine/cal.mass*100
-		@$('svg .caffeine').attr 'd', "M 1 #{caffeineHeight} L 1 94 A 5 5 1 0 0 14 94 L 14 #{caffeineHeight}"
+		# caffeineHeight = 95-cal.caffeine/cal.mass*100
+		# @$('svg .caffeine').attr 'd', "M 1 #{caffeineHeight} L 1 94 A 5 5 1 0 0 14 94 L 14 #{caffeineHeight}"

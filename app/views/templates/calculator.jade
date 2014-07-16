@@ -1,68 +1,71 @@
 .container
-	h1 obai calculator
-	.col-md-4
-		svg(width='100%', height='35em', viewbox='0 0 15 120', preserveAspectRatio='xMidYMin')
-			g.tube
-				path.caffeine(d='M 1 90 L 1 95 A 5 5 1 0 0 14 95 L 14 90')
-				rect.aroma(x='1', y='95.8', width='13', height='2.6')
-				rect.sodiumbicarbonate(x='1', y='93.2', width='13', height='2.7')
-				rect.citric-acid(x='1', y='87.92', width='13', height='5.4')
-				rect.guarana(x='1', y='81.74', width='13', height='6.3')
-				rect.sugar(x='1', y='0', width='13', height='81.85')
-				
-				
-				
-				
-				
-				path(d='M 1 0 L 1 95 A 5 5 1 0 0 14 95 L 14 0', stroke='black', fill='none', stroke-width=2)
+	.row
+		h1 obai calculator 
+			small - Caffeine. Sugar. Fizz. DIY.
+		.col-md-4
+			svg(width='100%', height='35em', viewbox='0 0 15 120', preserveAspectRatio='xMidYMin')
+				g.tube
+					path.caffeine(d='M 1 90 L 1 95 A 5 5 1 0 0 14 95 L 14 90')
+					rect.aroma(x='1', y='95.8', width='13', height='2.6')
+					rect.sodiumbicarbonate(x='1', y='93.2', width='13', height='2.7')
+					rect.citric-acid(x='1', y='87.92', width='13', height='5.4')
+					rect.guarana(x='1', y='81.74', width='13', height='6.3')
+					rect.sugar(x='1', y='0', width='13', height='81.85')
+					
+					path(d='M 1 0 L 1 95 A 5 5 1 0 0 14 95 L 14 0', stroke='black', fill='none', stroke-width=2)
 
-			g.bar
-				rect.sugar(x='20', y='0', width='0.5', height='81.84')
-				rect.guarana(x='20', y='81.84', width='0.5', height='6.19')
-				rect.citric-acid(x='20', y='88.02', width='0.5', height='5.29')
-				rect.sodiumbicarbonate(x='20', y='93.31', width='0.5', height='2.59')
-				rect.aroma(x='20', y='95.9', width='0.5', height='2.5')
-				rect.caffeine(x='20', y='98.4', width='0.5', height='1.6')
+				g.bar
+					rect.sugar(x='20', y='0', width='0.5', height='81.84')
+					rect.guarana(x='20', y='81.84', width='0.5', height='6.19')
+					rect.citric-acid(x='20', y='88.02', width='0.5', height='5.29')
+					rect.sodiumbicarbonate(x='20', y='93.31', width='0.5', height='2.59')
+					rect.aroma(x='20', y='95.9', width='0.5', height='2.5')
+					rect.caffeine(x='20', y='98.4', width='0.5', height='1.6')
 
-	.col-md-8
-		table.table
-			tr
-				td Sugar
-				td= recipe.sugar
-				td
-					input.ingredient.sugar.form-control(type='text', data-ingredient='sugar')
-			tr
-				td Guarana
-				td= recipe.guarana
-				td
-					input.ingredient.guarana.form-control(type='text', data-ingredient='guarana')
-			tr
-				td Citric Acid
-				td= recipe.citricAcid
-				td
-					input.ingredient.citric-acid.form-control(type='text', data-ingredient='citricAcid')
-			tr
-				td Sodiumbicarbonate
-				td= recipe.sodiumbicarbonate
-				td
-					input.ingredient.sodiumbicarbonate.form-control(type='text', data-ingredient='sodiumbicarbonate')
-			tr
-				td Aroma
-				td= recipe.aroma
-				td
-					input.ingredient.aroma.form-control(type='text', data-ingredient='aroma')
-			tr
-				td Caffeine
-				td= recipe.caffeine
-				td
-					input.ingredient.caffeine.form-control(type='text', data-ingredient='caffeine')
-			tr
-				td Total
-				td 100%
-				td
-					input.mass.form-control(type='text')
-			tr
-				td Tubes
-				td
-				td
-					input.tubes.form-control(type='text')
+		.col-md-8
+			table.table
+				tr
+					td Sugar
+					td= recipe.sugar
+					td
+						input.ingredient.sugar.form-control(type='text', data-ingredient='sugar')
+				tr
+					td Guarana
+					td= recipe.guarana
+					td
+						input.ingredient.guarana.form-control(type='text', data-ingredient='guarana')
+				tr
+					td Citric Acid
+					td= recipe.citricAcid
+					td
+						input.ingredient.citric-acid.form-control(type='text', data-ingredient='citricAcid')
+				tr
+					td Sodiumbicarbonate
+					td= recipe.sodiumbicarbonate
+					td
+						input.ingredient.sodiumbicarbonate.form-control(type='text', data-ingredient='sodiumbicarbonate')
+				tr
+					td Aroma
+					td= recipe.aroma
+					td
+						input.ingredient.aroma.form-control(type='text', data-ingredient='aroma')
+				tr
+					td Caffeine
+					td= recipe.caffeine
+					td
+						input.ingredient.caffeine.form-control(type='text', data-ingredient='caffeine')
+				tr
+					td Total
+					td 100%
+					td
+						input.mass.form-control(type='text')
+				tr
+					td Tubes
+					td
+					td
+						input.tubes.form-control(type='text')
+
+	.row
+		.footer
+			hr
+			a(href='https://github.com/rixx/obai') https://github.com/rixx/obai
