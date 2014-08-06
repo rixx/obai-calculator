@@ -26,44 +26,60 @@
 			table.table
 				tr
 					td Sugar
-					td= recipe.sugar
-					td
-						input.ingredient.sugar.form-control(type='text', data-ingredient='sugar')
+					td.recipe-cell #{recipe.sugar} %
+					td.ingredient-cell
+						.input-group
+							input.ingredient.sugar.form-control(type='text', data-ingredient='sugar')
+							span.input-group-addon g
 				tr
 					td Guarana
-					td= recipe.guarana
-					td
-						input.ingredient.guarana.form-control(type='text', data-ingredient='guarana')
+					td.recipe-cell #{recipe.guarana} %
+					td.ingredient-cell
+						.input-group
+							input.ingredient.guarana.form-control(type='text', data-ingredient='guarana')
+							span.input-group-addon g
 				tr
 					td Citric Acid
-					td= recipe.citricAcid
-					td
-						input.ingredient.citric-acid.form-control(type='text', data-ingredient='citricAcid')
+					td.recipe-cell #{recipe.citricAcid} %
+					td.ingredient-cell
+						.input-group
+							input.ingredient.citric-acid.form-control(type='text', data-ingredient='citricAcid')
+							span.input-group-addon g
 				tr
 					td Sodiumbicarbonate
-					td= recipe.sodiumbicarbonate
-					td
-						input.ingredient.sodiumbicarbonate.form-control(type='text', data-ingredient='sodiumbicarbonate')
+					td.recipe-cell #{recipe.sodiumbicarbonate} %
+					td.ingredient-cell
+						.input-group
+							input.ingredient.sodiumbicarbonate.form-control(type='text', data-ingredient='sodiumbicarbonate')
+							span.input-group-addon g
 				tr
 					td Aroma
-					td= recipe.aroma
-					td
-						input.ingredient.aroma.form-control(type='text', data-ingredient='aroma')
+					td.recipe-cell #{recipe.aroma} %
+					td.ingredient-cell
+						.input-group
+							input.ingredient.aroma.form-control(type='text', data-ingredient='aroma')
+							span.input-group-addon g
 				tr
 					td Caffeine
-					td= recipe.caffeine
-					td
-						input.ingredient.caffeine.form-control(type='text', data-ingredient='caffeine')
+					td.recipe-cell #{recipe.caffeine} %
+					td.ingredient-cell
+						.input-group
+							input.ingredient.caffeine.form-control(type='text', data-ingredient='caffeine')
+							span.input-group-addon g
 				tr
 					td Total
-					td 100%
-					td
-						input.mass.form-control(type='text')
+					td.recipe-cell 100%
+					td.ingredient-cell
+						.input-group
+							input.mass.form-control(type='text')
+							span.input-group-addon g
 				tr
 					td Tubes
 					td
-					td
-						input.tubes.form-control(type='text')
+					td.ingredient-cell
+						.input-group
+							input.tubes.form-control(type='text')
+							span.input-group-addon #
 
 	.row
 		.footer
